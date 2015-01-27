@@ -1,0 +1,60 @@
+package com.example.s02_e02_lifecycle;
+
+import com.example.s02_e02_lifecycle.MainActivity.buttonListener;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+
+public class otherActivity extends Activity{
+	
+	private Button button1;
+
+	protected void onCreate(Bundle savedInstanceState) {
+		System.out.println("MainActivity:onCreate");
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		button = (Button)findViewById(R.id.button1);
+		button.setOnClickListener(new buttonListener());
+
+			}
+	
+	protected void onDestory(){
+		System.out.println("MainActivity:onDestory");
+		super.onDestroy();
+	}
+	
+	
+	protected void onStart(){
+		System.out.println("MainActivity:onstart");
+		super.onStart();
+	}
+	
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		System.out.println("MainActivity:onResume");
+
+		super.onResume();
+	}
+
+
+	protected void onPause(){
+		System.out.println("MainActivity:onPause");
+		super.onPause();
+		
+	}
+	
+	protected void onRestart(){
+		System.out.println("MainActivity:onRestart");
+		super.onRestart();
+	}
+
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		System.out.println("MainActivity:onStop");
+		super.onStop();
+	}
+}
